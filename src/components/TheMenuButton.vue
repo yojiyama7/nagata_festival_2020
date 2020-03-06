@@ -10,12 +10,12 @@
 
 <script>
 export default {
-  // isMenuOpen を多分 props に移す
-  // props: {
-  // },
+  props: {
+    isMenuOpen: Boolean,
+    toggleMenu: Function
+  },
   data: function () {
     return {
-      isMenuOpen: false
     }
   },
   computed: {
@@ -26,27 +26,14 @@ export default {
     }
   },
   methods: {
-    toggleMenu: function () {
-      if (this.isMenuOpen) {
-        this.isMenuOpen = false
-      } else {
-        this.isMenuOpen = true
-      }
-    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-// グローバルなscssに書いておきたいものたち
-$white: #FAFAFA;
-$vermilion: #E53D46;
-$indigo: #42378A;
-$lime: #8CC63F;
-
 $trans-speed: 250ms;
 
-$box-size: 72px;
+$box-size: 64px;
 .box {
   display: flex;
   align-items: center;

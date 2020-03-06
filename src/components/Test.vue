@@ -1,19 +1,23 @@
 <template>
   <div>
-    <TheMenuButton />
+    <TheMenu />
+    aaa
+    <div class="big-box"></div>
   </div>
 </template>
 
 <script>
-import TheMenuButton from './TheMenuButton'
+import TheMenu from './TheMenu'
 
 export default {
   components: {
-    TheMenuButton
+    TheMenu
   }
 }
-
 </script>
 
 <style lang='scss' scoped>
+.big-box {
+  height: 4000px;
+}
 </style>
