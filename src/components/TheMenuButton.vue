@@ -45,6 +45,14 @@ $box-size: 64px;
   width: $box-size;
   border-radius: $box-size/2;
   background-color: $indigo;
+  filter: drop-shadow(4px 4px 8px $black);
+  @include pc {
+    top: 40px;
+    right: 40px;
+    height: $box-size*1.4;
+    width: $box-size*1.4;
+    border-radius: $box-size/2*1.4;
+  }
   &-inner {
     display: flex;
     flex-direction: column;
@@ -53,6 +61,10 @@ $box-size: 64px;
     width: $box-size * 0.56;
     // background-color: red;
     transition-duration: $trans-speed;
+    @include pc {
+      height: $box-size * 0.5 *1.4;
+      width: $box-size * 0.56 *1.4;
+    }
   }
 }
 
@@ -70,10 +82,16 @@ $bar-height: 6px;
 .menu-open {
   &.box-inner {
     width: $box-size * 0.5;
+    @include pc {
+      width: $box-size * 0.5 *1.4;
+    }
   }
   &.bar-1 {
     transform: rotate(45deg);
     width: ($box-size*0.5 - $bar-height)*1.414 + $bar-height;
+    @include pc {
+      width: (($box-size*0.5 - $bar-height)*1.414 + $bar-height) *1.4;
+    }
   }
   &.bar-2 {
     transition-duration: $trans-speed*0.8;
@@ -82,6 +100,9 @@ $bar-height: 6px;
   &.bar-3 {
     transform: rotate(-45deg);
     width: ($box-size*0.5 - $bar-height)*1.41421356 + $bar-height;
+    @include pc {
+      width: (($box-size*0.5 - $bar-height)*1.41421356 + $bar-height) *1.4;
+    }
   }
 }
 

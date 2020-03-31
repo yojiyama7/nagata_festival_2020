@@ -1,12 +1,29 @@
 // colors
 $white: #FAFAFA;
+$gray: #333333;
+$black: #0e0e0e;
 $vermilion: #E53D46;
 $indigo: #42378A;
 $lime: #8CC63F;
 
-// numbers
-// $container-width: 280px; // to 360px (sp-small)
-$container-width: 320px; // to 480px (sp-large)
-// (tablet)
-// (pc-small)
-// (pc-large)
+$container-width: 320px; // to 480px (sp)
+$container-width-pc: 960px;
+
+$breakpoint-pc: 1024px;
+
+@mixin pc {
+  @media (min-width: $breakpoint-pc) {
+    @content;
+  }
+}
+
+@mixin container-width {
+  width: $container-width;
+  @media (min-width: $breakpoint-pc) {
+    width: $container-width-pc;
+  }
+}
+
+@mixin shadow {
+  filter: drop-shadow(8px 8px 8px $gray);
+}

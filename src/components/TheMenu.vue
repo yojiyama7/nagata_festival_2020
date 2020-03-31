@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div id="the-menu">
     <TheMenuPage
       :isMenuOpen="isMenuOpen"
+      :toggleMenu="toggleMenu"
     />
     <TheMenuButton
       :isMenuOpen="isMenuOpen"
@@ -26,12 +27,20 @@ export default {
   },
   methods: {
     toggleMenu: function () {
+      console.log('toggle menu')
       if (this.isMenuOpen) {
         this.isMenuOpen = false
       } else {
         this.isMenuOpen = true
       }
     }
+  },
+  // とりあえずMenu側で$routeをwatchして見たがこれで良さそう。
+  // 同じページへ遷移しようとした時にできない。だめそう。
+  watch: {
+    // '$route' (to, from) {
+    //   this.isMenuOpen = false
+    // }
   }
 }
 </script>

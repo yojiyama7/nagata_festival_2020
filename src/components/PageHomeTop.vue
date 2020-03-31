@@ -2,8 +2,8 @@
   <div class="box">
     <div class="box-inner">
       <!-- a -->
-      <img src='../assets/logo.svg'>
-      <img src='../assets/logo_text.svg'>
+      <img class="logo" src='../assets/logo.svg'>
+      <img class="logo-text" src='../assets/logo_text.svg'>
     </div>
   </div>
 </template>
@@ -23,8 +23,25 @@ export default {
   // background-color: gray;
   &-inner {
     // margin: 24px auto 0;
-    width: $container-width;
+    @include container-width;
+    @include pc {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-direction: row-reverse;
+      // align-items: center;
+    }
   }
 }
 
+.logo {
+  @include pc {
+    width: 36%;
+  }
+  &-text {
+    @include pc {
+      width: 64%;
+    }
+  }
+}
 </style>

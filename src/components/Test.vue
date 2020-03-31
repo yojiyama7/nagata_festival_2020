@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <TheMenu />
-    aaa
-    <div class="big-box"></div>
+  <div class="box">
+    <div class="box-inner">
+      <BaseHeading2 :text="'test heading'"/>
+      <BaseTitleAndDesc />
+      <BaseTitleAndDesc />
+      <!-- hafwanoe -->
+      <div class="big-box"></div>
+    </div>
   </div>
 </template>
 
@@ -19,5 +23,12 @@ export default {
 <style lang='scss' scoped>
 .big-box {
   height: 4000px;
+}
+
+.box {
+  &-inner {
+    margin: 48px auto 0;
+    @include container-width;
+  }
 }
 </style>

@@ -44,6 +44,12 @@ requireComponent.keys().forEach(fileName => {
   )
 })
 
+// ページ遷移時、メニューを閉じたい。Menu側で実装。
+// router.beforeEach((to, from, next) => {
+//   const menu = document.getElementById('the-menu')
+//   menu.isMenuOpen = false
+// })
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
